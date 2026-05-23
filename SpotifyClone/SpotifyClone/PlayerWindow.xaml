@@ -1,0 +1,154 @@
+﻿<Window x:Class="SpotifyClone.PlayerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SpotifyClone"
+        mc:Ignorable="d"
+        Title="PlayerWindow" Height="700" Width="1200">
+    <Grid>
+
+        <!-- COLUMNS -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- ROWS -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+
+        <!-- SIDEBAR -->
+        <StackPanel Background="#000000">
+
+            <TextBlock Text="Spotify"
+                       Foreground="White"
+                       FontSize="30"
+                       FontWeight="Bold"
+                       Margin="20"/>
+
+            <Button Content="Home"
+                    Height="45"
+                    Margin="10"
+                    Background="#1DB954"
+                    Foreground="White"
+                    BorderThickness="0"/>
+
+            <Button Content="Search"
+                    Height="45"
+                    Margin="10"
+                    Background="#1DB954"
+                    Foreground="White"
+                    BorderThickness="0"/>
+
+            <Button Content="Your Library"
+                    Height="45"
+                    Margin="10"
+                    Background="#1DB954"
+                    Foreground="White"
+                    BorderThickness="0"/>
+
+        </StackPanel>
+
+        <!-- MAIN CONTENT -->
+        <Grid Grid.Column="1"
+              Background="#181818">
+
+            <TextBlock Text="Recently Played"
+                       Foreground="White"
+                       FontSize="30"
+                       Margin="20"/>
+
+            <!-- SONG CARDS -->
+            <WrapPanel Margin="20,80,20,20">
+
+                <!-- CARD 1 -->
+                <Border Width="200"
+                        Height="250"
+                        Background="#282828"
+                        Margin="10"
+                        CornerRadius="15">
+
+                    <StackPanel>
+
+                        <Image Source="Assets/Images/album1.jpeg"
+                               Height="180"
+                               Stretch="Fill"/>
+
+                        <TextBlock Text="Hozier Mix"
+                                   Foreground="White"
+                                   FontWeight="Bold"
+                                   Margin="10,10,10,0"/>
+
+                        <TextBlock Text="Artist Playlist"
+                                   Foreground="#B3B3B3"
+                                   Margin="10,5,10,0"/>
+
+                    </StackPanel>
+
+                </Border>
+
+                <!-- CARD 2 -->
+                <Border Width="200"
+                        Height="250"
+                        Background="#282828"
+                        Margin="10"
+                        CornerRadius="15">
+
+                    <StackPanel>
+
+                        <Image Source="Assets/Images/TaylorSwift.png"
+                               Height="180"
+                               Stretch="Fill"/>
+
+                        <TextBlock Text="Taylor Swift"
+                                   Foreground="White"
+                                   FontWeight="Bold"
+                                   Margin="10,10,10,0"/>
+
+                        <TextBlock Text="Top Hits"
+                                   Foreground="#B3B3B3"
+                                   Margin="10,5,10,0"/>
+
+                    </StackPanel>
+
+                </Border>
+
+            </WrapPanel>
+
+        </Grid>
+
+        <!-- MUSIC PLAYER -->
+        <Grid Grid.Row="1"
+              Grid.ColumnSpan="2"
+              Background="#282828">
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+
+                <Button Content="⏮"
+                        Width="60"
+                        Height="40"
+                        Margin="5"/>
+
+                <Button Content="▶"
+                        Width="60"
+                        Height="40"
+                        Margin="5"/>
+
+                <Button Content="⏭"
+                        Width="60"
+                        Height="40"
+                        Margin="5"/>
+
+            </StackPanel>
+
+        </Grid>
+
+    </Grid>
+</Window>
+    
+  

@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Images\album1.jpeg" />
+    <None Remove="Assets\Images\Album2.png" />
+    <None Remove="Assets\Images\AmandaBlack.jpg" />
+    <None Remove="Assets\Images\Ariana.jpeg" />
+    <None Remove="Assets\Images\hozier.jpg" />
+    <None Remove="Assets\Images\Menzi.jpg" />
+    <None Remove="Assets\Images\TaylorSwift.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Images\album1.jpeg" />
+    <Resource Include="Assets\Images\Album2.png" />
+    <Resource Include="Assets\Images\AmandaBlack.jpg" />
+    <Resource Include="Assets\Images\Ariana.jpeg" />
+    <Resource Include="Assets\Images\hozier.jpg" />
+    <Resource Include="Assets\Images\Menzi.jpg" />
+    <Resource Include="Assets\Images\TaylorSwift.png" />
+  </ItemGroup>
+
+</Project>
