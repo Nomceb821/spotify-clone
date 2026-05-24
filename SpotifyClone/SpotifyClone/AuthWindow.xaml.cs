@@ -1,62 +1,115 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SpotifyClone.Services;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace SpotifyClone
 {
-    /// <summary>
-    /// Interaction logic for AuthWindow.xaml
-    /// </summary>
     public partial class AuthWindow : Window
     {
+        private readonly AuthService authService =
+            new AuthService();
+
+        private readonly SessionService sessionService =
+            new SessionService();
+
         public AuthWindow()
         {
             InitializeComponent();
         }
 
+        // LOGIN
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            PlayerWindow playerWindow = new PlayerWindow();
+            string email = EmailTextBox.Text;
 
-            playerWindow.Show();
+            string password;
+
+            // CHECK VISIBLE PASSWORD
+            if (VisiblePasswordTextBox.Visibility == Visibility.Visible)
+            {
+                password = VisiblePasswordTextBox.Text;
+            }
+            else
+            {
+                password = PasswordTextBox.Password;
+            }
+
+            bool success =
+                authService.Login(email, password);
+
+            if (success)
+            {
+                if (RememberMeCheckBox.IsChecked == true)
+                {
+                    sessionService.SaveSession(email);
+                }
+
+                MessageBox.Show("Login successful!");
+
+                PlayerWindow playerWindow = new PlayerWindow();
+
+                playerWindow.Show();
+
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid email or password.");
+            }
+        }
+
+        // SIGN UP
+        private void SignUpButton_Click(object sender, RoutedEventArgs e)
+        {
+            RegisterWindow registerWindow =
+                new RegisterWindow();
+
+            registerWindow.Show();
 
             this.Close();
         }
-        //For the eye to show the password
+
+        // SHOW PASSWORD
         private bool isPasswordVisible = false;
 
         private void ShowPasswordButton_Click(object sender, RoutedEventArgs e)
         {
             if (!isPasswordVisible)
             {
-                VisiblePasswordTextBox.Text = PasswordTextBox.Password;
+                VisiblePasswordTextBox.Text =
+                    PasswordTextBox.Password;
 
-                VisiblePasswordTextBox.Visibility = Visibility.Visible;
+                VisiblePasswordTextBox.Visibility =
+                    Visibility.Visible;
 
-                PasswordTextBox.Visibility = Visibility.Collapsed;
+                PasswordTextBox.Visibility =
+                    Visibility.Collapsed;
 
                 isPasswordVisible = true;
             }
             else
             {
-                PasswordTextBox.Password = VisiblePasswordTextBox.Text;
+                PasswordTextBox.Password =
+                    VisiblePasswordTextBox.Text;
 
-                PasswordTextBox.Visibility = Visibility.Visible;
+                PasswordTextBox.Visibility =
+                    Visibility.Visible;
 
-                VisiblePasswordTextBox.Visibility = Visibility.Collapsed;
+                VisiblePasswordTextBox.Visibility =
+                    Visibility.Collapsed;
 
                 isPasswordVisible = false;
             }
+
+        }
+        private void ForgotPassword_Click(object sender,
+                                  System.Windows.Input.MouseButtonEventArgs e)
+        {
+            ResetPasswordWindow resetWindow =
+                new ResetPasswordWindow();
+
+            resetWindow.Show();
+
+            this.Close();
         }
     }
 }

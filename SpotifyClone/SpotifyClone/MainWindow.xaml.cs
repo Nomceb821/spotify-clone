@@ -30,5 +30,15 @@ namespace SpotifyClone
 
             this.Close();
         }
+        // Login onclick
+        private void LoginNavButton_Click(object sender, RoutedEventArgs e)
+        {
+            AuthWindow authWindow =
+                new AuthWindow();
+
+            authWindow.Show();
+
+            this.Close();
+        }
     }
 }

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 C:\Users\letag\OneDrive\Desktop\spotify\SpotifyClone\SpotifyClone\App.xaml
-3-739240010
+5718061368
 
-61230628432
-198-1127337667
-AuthWindow.xaml;MainWindow.xaml;PlayerWindow.xaml;
+15-1978842536
+226-628108487
+AuthWindow.xaml;MainWindow.xaml;PlayerWindow.xaml;RegisterWindow.xaml;ResetPasswordWindow.xaml;
 
 False
 

@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SpotifyClone"
         mc:Ignorable="d"
-        Title="AuthWindow" Height="700" Width="500"
+        Title="AuthWindow" Height="750" Width="500"
         WindowStartupLocation="CenterScreen"
         Background="#121212"
         >
     <Grid>
 
         <Border Width="380"
-                Height="580"
+                Height="650"
                 Background="#181818"
                 CornerRadius="20"
                 Padding="30"
@@ -110,6 +110,21 @@
 
                 </Border>
 
+                <!-- FORGOT PASSWORD -->
+                <TextBlock Text="Forgot Password?"
+                   Foreground="#1DB954"
+                   Cursor="Hand"
+                   Margin="5,0,0,15"
+                   MouseLeftButtonDown="ForgotPassword_Click"/>
+
+                <!-- Remember me-->
+
+                <CheckBox x:Name="RememberMeCheckBox"
+                      Content="Remember Me"
+                      Foreground="White"
+                      Margin="5,0,0,20"/>
+
+                
                 <!-- LOGIN BUTTON -->
                 <Button Content="LOG IN"
                     Height="50"
@@ -153,7 +168,8 @@
                     BorderThickness="1"
                     FontSize="15"
                     FontWeight="SemiBold"
-                    Cursor="Hand">
+                    Cursor="Hand"
+                    Click="SignUpButton_Click">
 
                     <Button.Template>
 

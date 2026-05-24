@@ -120,15 +120,8 @@
                                 Margin="10"
                                 Background="Transparent"
                                 Foreground="White"
-                                BorderBrush="Transparent"/>
-
-                        <Button Content="Sign Up"
-                                Margin="10"
-                                Padding="20,8"
-                                Background="Transparent"
-                                Foreground="White"
-                                BorderBrush="White"
-                                BorderThickness="2"/>
+                                BorderBrush="Transparent"
+                                Click="LoginNavButton_Click"/>
                     </StackPanel>
 
                 </Grid>

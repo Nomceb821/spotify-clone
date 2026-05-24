@@ -1,0 +1,194 @@
+﻿<Window x:Class="SpotifyClone.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SpotifyClone"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Background="#121212"
+        Title="RegisterWindow" Height="700" Width="500">
+    <Grid>
+
+        <Border Width="380"
+                Height="620"
+                Background="#181818"
+                CornerRadius="20"
+                Padding="30"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+
+            <StackPanel>
+
+                <!-- LOGO -->
+                <TextBlock Text="Spotify"
+                           Foreground="White"
+                           FontSize="40"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,30"/>
+
+                <!-- TITLE -->
+                <TextBlock Text="Create your account"
+                           Foreground="White"
+                           FontSize="28"
+                           FontWeight="SemiBold"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,40"/>
+
+                <!-- EMAIL -->
+                <TextBlock Text="Email"
+                           Foreground="White"
+                           Margin="0,0,0,5"/>
+
+                <Border CornerRadius="25"
+                        BorderBrush="#535353"
+                        BorderThickness="1"
+                        Background="#2A2A2A"
+                        Margin="0,0,0,20">
+
+                    <TextBox x:Name="RegisterEmailTextBox"
+                             Height="45"
+                             FontSize="16"
+                             Padding="10"
+                             Background="Transparent"
+                             Foreground="White"
+                             BorderThickness="0"
+                             CaretBrush="White"
+                             VerticalContentAlignment="Center"/>
+
+                </Border>
+
+                <!-- PASSWORD -->
+                <TextBlock Text="Password"
+                           Foreground="White"
+                           Margin="0,0,0,5"/>
+
+                <Border CornerRadius="25"
+                        BorderBrush="#535353"
+                        BorderThickness="1"
+                        Background="#2A2A2A"
+                        Margin="0,0,0,20">
+
+                    <Grid>
+
+                        <!-- HIDDEN PASSWORD -->
+                        <PasswordBox x:Name="RegisterPasswordTextBox"
+                                     Height="45"
+                                     FontSize="16"
+                                     Padding="10"
+                                     Background="Transparent"
+                                     Foreground="White"
+                                     BorderThickness="0"/>
+
+                        <!-- VISIBLE PASSWORD -->
+                        <TextBox x:Name="VisibleRegisterPasswordTextBox"
+                                 Height="45"
+                                 FontSize="16"
+                                 Padding="10"
+                                 Background="Transparent"
+                                 Foreground="White"
+                                 BorderThickness="0"
+                                 CaretBrush="White"
+                                 Visibility="Collapsed"/>
+
+                        <!-- EYE BUTTON -->
+                        <Button Content="👁"
+                                Width="40"
+                                Height="40"
+                                HorizontalAlignment="Right"
+                                Margin="0,2,2,0"
+                                Background="Transparent"
+                                BorderBrush="Transparent"
+                                Foreground="White"
+                                Cursor="Hand"
+                                Click="ShowRegisterPasswordButton_Click"/>
+
+                    </Grid>
+
+                </Border>
+
+                <!-- CONFIRM PASSWORD -->
+                <TextBlock Text="Confirm Password"
+                           Foreground="White"
+                           Margin="0,0,0,5"/>
+
+                <Border CornerRadius="25"
+                        BorderBrush="#535353"
+                        BorderThickness="1"
+                        Background="#2A2A2A"
+                        Margin="0,0,0,30">
+
+                    <Grid>
+
+                        <!-- HIDDEN CONFIRM PASSWORD -->
+                        <PasswordBox x:Name="ConfirmPasswordTextBox"
+                                     Height="45"
+                                     FontSize="16"
+                                     Padding="10"
+                                     Background="Transparent"
+                                     Foreground="White"
+                                     BorderThickness="0"/>
+
+                        <!-- VISIBLE CONFIRM PASSWORD -->
+                        <TextBox x:Name="VisibleConfirmPasswordTextBox"
+                                 Height="45"
+                                 FontSize="16"
+                                 Padding="10"
+                                 Background="Transparent"
+                                 Foreground="White"
+                                 BorderThickness="0"
+                                 CaretBrush="White"
+                                 Visibility="Collapsed"/>
+
+                        <!-- EYE BUTTON -->
+                        <Button Content="👁"
+                                Width="40"
+                                Height="40"
+                                HorizontalAlignment="Right"
+                                Margin="0,2,2,0"
+                                Background="Transparent"
+                                BorderBrush="Transparent"
+                                Foreground="White"
+                                Cursor="Hand"
+                                Click="ShowConfirmPasswordButton_Click"/>
+
+                    </Grid>
+
+                </Border>
+
+                <!-- CREATE ACCOUNT BUTTON -->
+                <Button Content="CREATE ACCOUNT"
+                        Height="50"
+                        Background="#1DB954"
+                        Foreground="White"
+                        FontWeight="Bold"
+                        FontSize="16"
+                        Cursor="Hand"
+                        BorderThickness="0"
+                        Click="CreateAccountButton_Click">
+
+                    <Button.Template>
+
+                        <ControlTemplate TargetType="Button">
+
+                            <Border Background="{TemplateBinding Background}"
+                                    CornerRadius="25">
+
+                                <ContentPresenter HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center"/>
+
+                            </Border>
+
+                        </ControlTemplate>
+
+                    </Button.Template>
+
+                </Button>
+
+            </StackPanel>
+
+        </Border>
+
+    </Grid>
+</Window>
